@@ -40,7 +40,9 @@ def rule_grayhole_combined(packet: dict) -> bool:
     return False
 
 
-## high_StNum
+## high_StNum        return True
+    return False
+
 
 
 def rule_high_StNum_StNum(packet: dict) -> bool:
