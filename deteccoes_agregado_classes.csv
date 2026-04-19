@@ -1,0 +1,10 @@
+classe_ataque,grayhole,high_StNum,injection,inverse_replay,masquerade_fake_fault,masquerade_fake_normal,normal,poisoned_high_rate,random_replay
+grayhole,0,2479,19999,2235,2941,0,1565,2485,0
+high_StNum,0,18296,20000,18296,18976,0,13089,6464,0
+injection,0,3496,20000,3243,6399,0,2996,14482,0
+inverse_replay,0,2829,20000,2654,9692,0,806,14904,0
+masquerade_fake_fault,0,3008,20000,2912,7321,0,2908,12521,0
+masquerade_fake_normal,0,7192,20000,7177,7912,0,4582,7082,0
+normal,0,14895,39999,12998,17927,0,8258,16040,0
+poisoned_high_rate,0,1621,20000,1612,2074,0,1616,2344,0
+random_replay,0,9000,20000,8215,11384,0,6414,12156,0

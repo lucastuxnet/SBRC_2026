@@ -1,0 +1,10 @@
+class,support,TP,FP,TN,FN,TPR_recall,FPR
+grayhole,19999,19999,0,0,0,1.0,0.0
+high_StNum,20000,20000,0,0,0,1.0,0.0
+injection,20000,20000,0,0,0,1.0,0.0
+inverse_replay,20000,20000,0,0,0,1.0,0.0
+masquerade_fake_fault,20000,20000,0,0,0,1.0,0.0
+masquerade_fake_normal,20000,20000,0,0,0,1.0,0.0
+normal,39999,0,39999,0,0,0.0,1.0
+poisoned_high_rate,20000,20000,0,0,0,1.0,0.0
+random_replay,20000,20000,0,0,0,1.0,0.0
