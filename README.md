@@ -268,9 +268,6 @@ jupyter notebook SBRC_2026_LLM_IDS_GOOSE.ipynb
 
 ### Expected Execution Time & Resources
 
-```markdown
-## Expected Execution Time & Resources
-
 All measurements were taken on the infrastructure described above.
 
 | Stage | Approximate Time | Notes |
@@ -292,7 +289,7 @@ All measurements were taken on the infrastructure described above.
 | **GPU** | Not used |
 
 > **If rate-limited by Groq**, the notebook uses exponential backoff and will retry automatically up to 5 times per call.
-```
+
 ---
 
 ## Generated Outputs & Artifacts
