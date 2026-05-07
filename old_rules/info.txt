@@ -1,0 +1,1 @@
+Pasta de backup arquivos json e py das regras geradas pela ferramenta.
