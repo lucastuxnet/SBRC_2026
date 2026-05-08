@@ -171,7 +171,7 @@ The experiments described in the paper were conducted on the following setup:
 | **RAM** | 32 GB DDR5 |
 | **Python** | 3.14.3 (CPython) |
 | **GPU** | Not required — all inference is performed via Groq Cloud API |
-| **LLM Model** | `groq/compound` (accessed via Groq API key) |
+| **LLM Model** | `openai/gpt-oss-120b` (accessed via Groq API key) |
 
 > **Note:** The pipeline uses cloud-based LLM inference. No local GPU is needed. A stable internet connection is required to call the Groq API.
 
