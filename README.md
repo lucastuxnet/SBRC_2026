@@ -131,17 +131,21 @@ The LLM generates rules based on the following 15 features (derived from the ori
 │ └── ERENO-2.0-100K.csv # Full test dataset – 200,052 samples, 9 classes
 │
 ├── old_rules/ # Backup of previous rule versions
-│ ├── rules_20260115_143025.py # Older version of refined rules
-│ ├── rules_raw_20260115_143022.py # Older version of raw LLM rules
+│ ├── rules_20260508_023144.py # Older version of refined rules
+│ ├── rules_raw_20260508_023144.py # Older version of raw LLM rules
+│ ├── red_flags_20260508_022814.json # Older version of Red flags extracted per attack class
 │ └── ... # Additional timestamped backups
 │
 ├── old_data/ # Backup of previous evaluation results
-│ ├── detection_results_20260115_150530.csv # Previous detection results
-│ ├── confusion_matrix_20260115_150530.csv # Previous confusion matrix
+│ ├── detection_results_20260508_023304.csv # Previous detection results
+│ ├── confusion_matrix_20260508_023551.csv # Previous confusion matrix
+│ ├── deteccoes_agregado_classes_20260508_023551.csv # Previous total detections per attack class
+│ ├── latencia_regras_20260508_023556.csv # Previous per-rule execution latency (in µs)
+│ ├── matriz_regras_ataques_20260508_023545.csv # Previous rule × attack class trigger-count matrix
 │ └── ... # Additional timestamped backups
 │
 ├── old_charts/ # Backup of previous visualizations
-│ ├── matriz_regras_ataques_plot_20260115_160245.png
+│ ├── matriz_regras_ataques_plot_20260508_023638.png
 │ └── ... # Additional timestamped chart backups
 │
 ├── red_flags.json # Red flags extracted per attack class
