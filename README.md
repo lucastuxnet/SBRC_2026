@@ -117,7 +117,7 @@ The LLM generates rules based on the following 15 features (derived from the ori
 
 ```
 .
-├── SBRC_2026_LLM_IDS_GOOSE.ipynb # Main notebook (proof of concept)
+├── SBRC_2026_LLM_IDS_GOOSE_v1.ipynb # Main notebook (proof of concept)
 ├── rules.py # Clean & refined detection rules (latest version)
 ├── rules_raw.py # Raw LLM-generated rules (before refinement)
 ├── requirements.txt # Python dependencies (pinned versions)
@@ -246,7 +246,7 @@ cp .env.example .env
 # Edit .env and add your Groq API key: GROQ_API_KEY=gsk_...
 
 # 5. Launch the notebook
-jupyter notebook SBRC_2026_LLM_IDS_GOOSE.ipynb
+jupyter notebook SBRC_2026_LLM_IDS_GOOSE_v1.ipynb
 ```
 
 ---
@@ -265,7 +265,7 @@ python -c "import pandas, groq; print('Dependencies OK')"
 Open the notebook in Jupyter or VSCode and run the cells in order:
 
 ```bash
-jupyter notebook SBRC_2026_LLM_IDS_GOOSE.ipynb
+jupyter notebook SBRC_2026_LLM_IDS_GOOSE_v1.ipynb
 ```
 
 | Section | What it does |
