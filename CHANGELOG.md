@@ -3,6 +3,8 @@
 ## [1.2.0] - 2026-05-08 (Camera-ready)
 
 ### Changes
+- Adicionado ao requirements o `Jupyter`
+- Adicionado informações sobre a LLM no README
 - Adicionado sistema automático de backup para todos arquivos gerados
 - Adicionada pasta `old_charts/` para backups de imagens
 - Adicionada pasta `old_data/` para backups de dados CSV
