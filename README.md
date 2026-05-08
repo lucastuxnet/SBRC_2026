@@ -177,6 +177,37 @@ The experiments described in the paper were conducted on the following setup:
 
 ---
 
+## LLM Configuration Details
+
+### Model: `openai/gpt-oss-120b`
+
+| Property | Value | Source |
+|----------|-------|--------|
+| **Provider** | Groq API (via `groq` Python library) | - |
+| **Model type** | 120B parameter Mixture-of-Experts (MoE) | [citation:10] |
+| **Context window** | 131,072 tokens | [citation:8] |
+| **License** | Apache 2.0 | [citation:10] |
+| **Release date** | August 2025 | [citation:10] |
+
+### Available Parameters (per Groq API)
+
+| Parameter | Configurable? | Notes |
+|-----------|---------------|-------|
+| `model` | Yes | Set to `openai/gpt-oss-120b` |
+| `max_tokens` | Yes | Set to 2000 |
+| `temperature` | No | Uses Groq default (not user-configurable) |
+| `seed` | No | Not exposed via Groq API |
+
+### Reproducibility Guarantee
+
+Despite the non-configurable `temperature` and `seed` parameters:
+
+1. **Raw outputs are saved** - Every LLM response is backed up with timestamp
+2. **Evaluation is deterministic** - Final detection uses `rules.py` (no LLM dependency)
+3. **Prompts are documented** - Complete prompts visible in notebook cells
+
+---
+
 ## Requirements
 
 - Python 3.12+
