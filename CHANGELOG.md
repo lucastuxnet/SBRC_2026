@@ -12,9 +12,11 @@
 - Corrigido bug na extração de red flags para classe 'grayhole'
 - Criado um arquivo para versionamento `CHANGELOG.md`
 - Alterado o nome do arquivo de exemplo de API-key de `.env.example` para `.env.example`
+- Criado um filtro para que o FRP não bloquei o trafego normal.
+- Alterada a API de busca para `openai/gpt-oss-120b` a versão atende melhor as requisições do projeto
 
 ### Files Modified
-- `SBRC_2026_LLM_IDS_GOOSE.ipynb` (versão final)
+- `SBRC_2026_LLM_IDS_GOOSE_v1.ipynb` (versão final)
 - `README.md` (seção de versão anterior adicionada)
 - `requirements.txt` (dependências atualizadas)
 
