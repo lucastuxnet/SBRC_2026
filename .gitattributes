@@ -8,4 +8,3 @@ old_data/** filter=lfs diff=lfs merge=lfs -text
 old_charts/** filter=lfs diff=lfs merge=lfs -text
 old_rules/** filter=lfs diff=lfs merge=lfs -text
 *.html filter=lfs diff=lfs merge=lfs -text
-*.md filter=lfs diff=lfs merge=lfs -text
