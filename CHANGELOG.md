@@ -5,6 +5,7 @@
 ### Changes
 - Adicionado ao requirements o `Jupyter`
 - Adicionado informações sobre a LLM no README
+- Adicionado ao README a compatibilidade de executar o notebook em um ambiente docker
 - Adicionado sistema automático de backup para todos arquivos gerados
 - Adicionada pasta `old_charts/` para backups de imagens
 - Adicionada pasta `old_data/` para backups de dados CSV
