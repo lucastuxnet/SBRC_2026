@@ -295,6 +295,146 @@ python -c "import pandas, groq; print('Dependencies OK')"
 
 ---
 
+## Running with Docker
+
+> **Note:** The repository does not include a pre-configured `Dockerfile`. Follow the steps below to containerize the pipeline from scratch.
+
+### Prerequisites
+
+- Docker installed on your machine
+- Git installed on your machine
+- A Groq account and API key with access to the `openai/gpt-oss-120b` model
+
+### Step-by-Step Instructions
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/lucastuxnet/SBRC_2026.git
+```
+```bash
+cd SBRC_2026
+```
+
+#### 2. Create the Dockerfile
+
+Create a file named `Dockerfile` in the project root:
+
+```dockerfile
+FROM python:3.12-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir jupyter
+
+COPY . .
+
+EXPOSE 8888
+
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+```
+
+#### 3. Configure the API Key
+
+Create a `.env` file at the project root with your Groq API key:
+
+```
+GROQ_API_KEY=gsk_your_api_key_here
+```
+
+> **Warning:** Never commit the `.env` file. It is already included in `.gitignore`.
+
+#### 4. Build the Docker Image
+
+```bash
+docker build -t sbrc2026 .
+```
+
+#### 5. Run the Container (without persistence)
+
+```bash
+docker run -p 8888:8888 --env-file .env sbrc2026
+```
+
+#### 6. Run the Container (with persistent output folder)
+
+```bash
+mkdir -p ./output_do_projeto
+```
+```bash
+docker run -p 8888:8888 --env-file .env -v $(pwd)/output_do_projeto:/app sbrc2026
+```
+
+#### 7. Access the Notebook
+
+After running the container, the terminal will display a URL similar to:
+
+```
+http://127.0.0.1:8888/tree?token=ed2cad5686f5d722ba7cb341fbbc2d65ca124f66a54ff1db
+```
+
+Open this URL in your browser and click on `SBRC_2026_LLM_IDS_GOOSE_v1.ipynb`.
+
+#### 8. Execute the Pipeline
+
+Run the notebook cells in order:
+
+| Section | Description |
+|---------|-------------|
+| **§4 – Setup** | Imports libraries and configures Groq client |
+| **§5 – Data Ingestion** | Loads the ERENO dataset and displays class distribution |
+| **§6.1 – Red Flag Extraction** | LLM identifies behavioral patterns for each attack class |
+| **§6.2 – Rule Generation** | LLM translates red flags into Python detection functions |
+| **§7 – Rule Execution** | Applies generated rules to GOOSE traffic |
+| **§8 – Matrix Generation** | Generates confusion matrix and evaluation metrics |
+
+### Expected Execution Time
+
+| Stage | Approximate Time |
+|-------|-----------------|
+| Setup + Data Loading (§4–§5) | < 5 seconds |
+| Red Flag Extraction (§6.1) | 2–5 minutes |
+| Rule Generation (§6.2) | 3–8 minutes |
+| Rule Execution + Matrix (§7–§8) | 10–30 seconds |
+| **Total** | **5–15 minutes** |
+
+### Resource Usage
+
+| Metric | Peak Value |
+|--------|------------|
+| RAM | ~1.2 GB |
+| Disk (outputs) | ~50 MB |
+| Network per API call | ~100 KB |
+| GPU | Not used |
+
+### Important Notes
+
+- **API Key:** The Groq API key is mandatory for sections 6.1 and 6.2. Without a valid key with access to the `openai/gpt-oss-120b` model, rule generation will fail.
+- **Internet:** The LLM stages require a stable internet connection to call the Groq Cloud API.
+- **Rate Limits:** The notebook automatically retries up to 5 times with exponential backoff if rate-limited by Groq.
+- **Reproducibility:** All LLM outputs are saved with timestamps. Final evaluation uses deterministic `rules.py` with no LLM dependency.
+- **Operating System:** Commands above are for Linux/macOS. On Windows, replace `$(pwd)` with `%cd%` in the volume mount path.
+
+### Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| `git: command not found` | Install Git: `sudo apt install git` (Linux) or download from git-scm.com (Windows/macOS) |
+| Authentication error in §6 | Verify `.env` contains `GROQ_API_KEY=gsk_...` with no quotes or extra spaces |
+| API rate limit reached | Wait a few minutes and re-run the cell; notebook retries automatically |
+| Connection refused on port 8888 | Ensure container is running and port not blocked by firewall |
+| Module not found errors | Rebuild image with `docker build --no-cache -t sbrc2026 .` |
+| Permission denied on volume mount | Use absolute paths or check folder permissions |
+
+
+---
+
 ## Running the Notebook
 
 Open the notebook in Jupyter or VSCode and run the cells in order:
