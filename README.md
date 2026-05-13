@@ -2,7 +2,7 @@
 
 ## An LLM-driven Pipeline for Real-Time GOOSE Intrusion Detection and Prevention
 
-**Authors:** Lucas A. Martins¹, Camilla B. Quincozes¹², Silvio E. Quincozes¹², Giovanni Siervo¹
+**Authors:** Lucas A. Martins¹, Camilla B. Quincozes¹², Silvio E. Quincozes¹², Giovanni Siervo¹, Marcelo Caggiani Luizelli²   
 ¹ Universidade Federal de Uberlândia (UFU) – Uberlândia, Brazil  
 ² Universidade Federal do Pampa (UNIPAMPA) – Alegrete, Brazil  
 
