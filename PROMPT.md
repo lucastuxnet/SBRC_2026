@@ -83,7 +83,7 @@ Você é um especialista em segurança IEC 61850 e desenvolvedor Python. Dado o 
 
 | Parâmetro | Valor |
 |-----------|-------|
-| Modelo | OpenRouter (configurável — ex.: GPT-OSS-120B, Llama-3.3-70B, Qwen3-32B) |
+| Modelo | Groq (GPT-OSS 120B / Llama 4) |
 | Temperature | 0 |
 | Max tokens | 2048 |
 | Top_p | 1 |
